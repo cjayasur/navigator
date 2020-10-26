@@ -1,0 +1,25 @@
+open package.json
+run react-natice start  <<<< This will start the metro server
+$ . ~/.bash_profile
+adb devices
+you see a device otherwise plug in a phone to the usb or start avdmanager or from AndoridStudio and start emulator
+then run the app in the phone with
+react-native run-android
+
+
+clean android
+==============
+cd PROJECTHOME/android
+./gradelw clean
+cd ..
+react-native android  //rebuild it
+react-native start
+react-native run-android
+
+clean ios
+=========
+cd PROJECTHOME/ios
+pod install
+pull project up with Xcode and build it for the iphone
+react-native start
+react-native run-ios
