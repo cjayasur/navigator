@@ -7,10 +7,11 @@ import {
     Title,
     Paragraph,
     List,
-    Provider as PaperProvider,
+    Provider as PaperProvider, Headline,
 } from 'react-native-paper';
 
 import { View, Text } from 'react-native';
+import TopBar from "./Components/TopBar";
 /*
 function HomeScreen({navigation}) {
     return (
@@ -30,16 +31,27 @@ const DetailsScreen = ({navigation}) => {
 }
 */
 
-const DetailsScreen = ({navigation}) => {
+const DetailsScreen = ({route, navigation}) => {
+    const { itemID, otherParam } = route.params
     return(
-        <TouchableOpacity style={styles.button} onPress={() => navigation.push("Details")}>
-            <Text> Press to go to Detail</Text>
-        </TouchableOpacity>
-    )
+        <>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.push("Details",
+                {itemID: Math.random() * 100})}>
+                <Text> Press to go to Detail</Text>
+            </TouchableOpacity>
+            <Headline> itemID: {JSON.stringify(itemID)}</Headline>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.popToTop()}>
+                <Text> Press to go Home</Text>
+            </TouchableOpacity>
+        </>
+)
 }
 
 const HomeScreen = ({ navigation, title, content }) => (
-    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Details")}
+    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Details", {
+        itemID: 56,
+        otherParam: 'Passing 56 to Details screen'
+    })}
     >
         <Text>Press to go to details screen</Text>
     </TouchableOpacity>
