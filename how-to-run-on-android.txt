@@ -12,9 +12,10 @@ clean android
 cd PROJECTHOME/android
 ./gradelw clean
 cd ..
-react-native android  //rebuild it
+yarn adnroid
 react-native start
 react-native run-android
+react-native  run-android --deviceId 0915f9506fc80c05
 
 clean ios
 =========
