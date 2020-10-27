@@ -15,7 +15,7 @@ cd ..
 yarn adnroid
 react-native start
 react-native run-android
-react-native  run-android --deviceId 0915f9506fc80c05
+react-native  run-android --deviceId 0915f9506fc80c05 <<< If this fails use "yarn android"
 
 clean ios
 =========
